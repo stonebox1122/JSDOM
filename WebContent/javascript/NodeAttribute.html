@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//关于节点的属性：nodeType,nodeName,nodeValue
+	//在HTML文档中，任何一个节点都有这3个属性，而id，name，value是具体节点的属性
+	window.onload = function() {
+		//1.元素节点的3个属性
+		var bjNode = document.getElementById("bj");
+		alert(bjNode.nodeType); //元素节点：1
+		alert(bjNode.nodeName); //节点名：LI
+		alert(bjNode.nodeValue); //元素节点没有nodeValue属性值：null
+		
+		//2.属性节点
+		var nameAttr = document.getElementById("name").getAttributeNode("name");
+		alert(nameAttr.nodeType); //属性节点：2
+		alert(nameAttr.nodeName); //属性节点节点名：属性名为name
+		alert(nameAttr.nodeValue); //元属性节点的nodeValue属性值：属性值为username
+		
+		//3.文本节点
+		var textNode = bjNode.firstChild;
+		alert(textNode.nodeType); //文本节点：3
+		alert(textNode.nodeName); //节点名：#text
+		alert(textNode.nodeValue); //文本节点的nodeValue属性值：文本值为北京
+		
+		//nodeType，nodeName是只读的，而nodeValue是可以改变的。
+		//以上三个属性，只有在文本节点中使用nodeValue读写文本值时使用最多。
+	}
+</script>
+</head>
+<body>
+	<p>你喜欢哪个城市？</p>
+	<ul id="city">
+		<li id="bj" name="BeiJing">北京</li>
+		<li>上海</li>
+		<li>东京</li>
+		<li>首尔</li>
+	</ul>
+	<br><br>
+	name: <input type="text" name="username" id="name" value="stone">
+</body>
+</html>

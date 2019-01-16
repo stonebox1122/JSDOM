@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//获取文本节点
+	window.onload = function() {
+		//文本节点一定是元素的子节点
+		//1.获取文本节点所在的元素节点
+		var bjNode = document.getElementById("bj");
+		
+		//2.通过firstChild定位到文本节点
+		var bjTextNode = bjNode.firstChild;
+		
+		//3.通过操作文本节点的nodeValue属性来读写文本节点的值
+		alert(bjTextNode.nodeValue);
+		bjTextNode.nodeValue="stone";
+	}
+</script>
+</head>
+<body>
+	<p>你喜欢哪个城市？</p>
+	<ul id="city">
+		<li id="bj" name="BeiJing">北京</li>
+		<li>上海</li>
+		<li>东京</li>
+		<li>首尔</li>
+	</ul>
+</body>
+</html>
